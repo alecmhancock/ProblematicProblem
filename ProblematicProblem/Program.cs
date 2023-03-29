@@ -1,5 +1,6 @@
 using System;
 using System.Collections.Generic;
+using System.Runtime.CompilerServices;
 using System.Threading;
 
 namespace ProblematicProblem
@@ -46,10 +47,9 @@ namespace ProblematicProblem
                     }
                     Console.WriteLine();
                     Console.Write("Would you like to add any activities before we generate one? yes/no: ");
-                    //bool addToList = bool.Parse(Console.ReadLine());
+                    bool addToList = (Console.ReadLine().ToLower() == "yes") ? true : false;
 
-                    contResponse = Console.ReadLine().ToLower();
-                    bool addToList = (contResponse == "yes");
+                    
 
                     Console.WriteLine();
                     while (addToList)
@@ -65,12 +65,8 @@ namespace ProblematicProblem
                         Console.WriteLine();
                         Console.WriteLine("Would you like to add more? yes/no: ");
                         //string strToList = Console.ReadLine();
-                        contResponse = Console.ReadLine().ToLower();
+                        addToList = (Console.ReadLine().ToLower() == "yes") ? true : false;
                         
-                        if (contResponse == "yes")
-                        {
-                            cont = true;
-                        }
                     }
                 }
 
